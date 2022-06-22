@@ -6,8 +6,20 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-user1 = User.create(username: "zdrake", password: "123")
+# user1 = User.create(username: "zdrake", password: "123")
 
-post1 = Post.create(image: 'elephant', description: 'saw the elephants!', poster_id: user1.id)
+# post1 = Post.create(image: 'elephant', description: 'saw the elephants!', poster_id: user1.id)
+
+50.times do
+    post = Post.create(
+      user: Faker::Name.first_name
+    )
+
+    rand(1..20).times do
+      Comment.create(
+        text: Faker::Lorem.sentence
+      )
+    end
+  end
 
 
