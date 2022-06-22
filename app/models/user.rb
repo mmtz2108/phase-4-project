@@ -3,7 +3,7 @@ class User < ApplicationRecord
     has_many :posts, through: :comments
 
     def authored_posts
-        Post.where(poster_id: self.id)
+        Post.where(poster_id: self.id) #covers has_many posts
     end
 
     def commented_posts 
