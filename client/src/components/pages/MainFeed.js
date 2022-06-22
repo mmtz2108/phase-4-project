@@ -3,9 +3,8 @@ import React from 'react'
 function MainFeed() {
   return (
     // navbar goes here
-    // Making other user's posts here
-    // display current posts
-    // 
+    // display all posts
+    
     <div>MainFeed</div>
   )
 }

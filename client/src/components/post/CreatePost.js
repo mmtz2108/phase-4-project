@@ -3,11 +3,16 @@ import {useState} from 'react'
 
 function CreatePost() {
 
-handleSubmit(obj) {
-    description: description
+function handleSubmit(e) {
+    e.preventDefault(); 
+    obj = {
+    description: description,
+    image: image
+    }
 }
 
 const [description, setDescription] = useState("")
+const [image, setImage] = useState("")     // change this , possible roll back *JUST A STRING U KING :-)*
 
   return (
     <div>
