@@ -46,5 +46,5 @@ group :development do
   # gem "spring"
 end
 
-
+gem 'sqlite3', '~> 1.4'
 gem "active_model_serializers", "~> 0.10.13"

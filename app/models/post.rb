@@ -6,9 +6,10 @@ class Post < ApplicationRecord
 
 
 
-    # one to many
+    # one to many, covers belongs_to user
     def author
-    self.find(poster_id)
+    User.find(self.poster_id)
+    
     end
 
     def commenters 
