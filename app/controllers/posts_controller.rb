@@ -18,7 +18,7 @@ class PostsController < ApplicationController
         render json: post, status: 201
     end
 
-    def patch 
+    def update 
         post = Post.find_by!(id: params[:id])
         post.update!(post_params)
         render json: post, status: 201
@@ -37,8 +37,8 @@ class PostsController < ApplicationController
     end
 
 
-    def invalid 
-        render json: {errors: ["validation errors"]}, status: 422
+    def invalid errorobj
+        render json: { errors: errorobj.record.errors.full_messages }, status: 422
     end
 
     def not_found
