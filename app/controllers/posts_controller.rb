@@ -3,6 +3,8 @@ class PostsController < ApplicationController
 
     rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
+    before_action :authorize
+
     def index 
         posts = Post.all 
         render json: posts, status: 200
@@ -43,5 +45,9 @@ class PostsController < ApplicationController
 
     def not_found
         render json: {error: "Post not found"}, status: 404
+    end
+
+    def authorize
+        return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
     end
 end
