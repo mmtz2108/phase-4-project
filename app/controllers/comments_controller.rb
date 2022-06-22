@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :invalid
+    before_action :authorize
 
     def create
         comment = Comment.create!(comment_params)
@@ -26,5 +27,9 @@ class CommentsController < ApplicationController
 
     def comment_params 
         params.permit(:description, :post_id, :user_id)
+    end
+
+    def authorize
+        return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
     end
 end
