@@ -3,6 +3,7 @@ import {useState} from 'react'
 
 function CreatePost() {
 
+
 function handleSubmit(e) {
     e.preventDefault(); 
     obj = {

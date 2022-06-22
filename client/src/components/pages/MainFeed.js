@@ -4,7 +4,6 @@ function MainFeed() {
   return (
     // navbar goes here
     // display all posts
-    
     <div>MainFeed</div>
   )
 }
