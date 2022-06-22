@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+  get 'sessions/destroy'
   resources :users, only: [:index, :show]
   resources :posts
   resources :comments, only: [:create, :update, :destroy]
+
+  get "/me", to: "users#show"
+
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
   # route to test your configuration
   get '/hello', to: 'application#hello_world'
 end
