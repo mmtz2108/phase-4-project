@@ -1,29 +1,38 @@
-import { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+// import Home from "./pages/Home";
+// import Register from "./pages/Register";
+// import Login from "./pages/Login";
 
-function App() {
-  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
-  }, []);
+// import React, {useState} from 'react';
+// import ReactDOM from 'react-dom';
+import React from 'react';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import NavBar from "./components/NavBar";
+
+const App = () => {
+  const [page, setPage] = useState("/")
 
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Switch>
-          <Route path="/testing">
-            <h1>Test Route</h1>
-          </Route>
-          <Route path="/">
-            <h1>Page Count: {count}</h1>
-          </Route>
-        </Switch>
-      </div>
-    </BrowserRouter>
-  );
-}
+    <div>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<LoginPage />} />
+          <Route path="" element={<MainFeed />} />
+          <Route path="*" element={<ErrorPage/>} />
+
+        </Routes>
+      </Router>
+
+
+      {/* <NavBar onChangePage={setPage} />
+      <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route path='/Cart' element={<Cart />} />
+        <Route path='/Login' element={<Login />} />
+        <Route path='/Register' element={<Register />} />
+      </Routes> */}
+    </div>
+  )
+};
 
 export default App;
