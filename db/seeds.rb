@@ -20,6 +20,13 @@
         text: Faker::Lorem.sentence
       )
     end
+end
+
+    photocloud: Cloudinary::Uploader.upload(file, options = {})
+
+
+
+
   end
 
 
