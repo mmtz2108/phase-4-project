@@ -1,15 +1,14 @@
 
 import React from 'react'
-import Navbar from "./components/Navbar/Navbar"
+// import NavBar from "./components/Navbar"
 
 function MainFeed() {
   return (
     // navbar goes here
-    <div>
-    <Navbar />
-    // display all posts
+    // display all posts 
+
     <div>MainFeed</div>
-    </div>
+ 
   )
 }
 
