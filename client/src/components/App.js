@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
 import MainFeed from './pages/MainFeed';
 import ErrorPage from './pages/ErrorPage';
+import NavBar from './NavBar';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -15,12 +16,7 @@ const App = () => {
     });
   }, []);
 
-  if (user) {
-    return <h2>Welcome, {user.username}!</h2>;
-  } else {
-    return <Login onLogin={setUser} />;
-  }
-}
+
   //const [page, setPage] = useState("/")
 
   //function handleDelete(id){
@@ -30,7 +26,8 @@ const App = () => {
 
   return (
     <div>
-      <LoginPage />
+      <NavBar user={user} setUser={setUser}/>
+      {user? <h2>Welcome</h2>: <LoginPage setUser={setUser}/>}
       {/* <Router>
         <Routes>
           
@@ -43,6 +40,6 @@ const App = () => {
       
     </div>
   )
-};
+    };
 
 export default App;

@@ -1,9 +1,10 @@
 import React, { useState }from "react";
-import styled, {css} from "styled-components";
+//import styled, {css} from "styled-components";
 import { Link } from "react-router-dom";
 
-function LoginPage({ onLogin }) {
+function LoginPage({ setUser }) {
     const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("")
   
     function handleSubmit(e) {
       e.preventDefault();
@@ -12,10 +13,10 @@ function LoginPage({ onLogin }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username }),
+        body: JSON.stringify({ username: username, password: password  }),
       })
         .then((r) => r.json())
-        .then((user) => onLogin(user));
+        .then((user) => setUser(user));
     }
   
     return (
@@ -24,6 +25,11 @@ function LoginPage({ onLogin }) {
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+        />
+          <input
+          type="text"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>
       </form>
@@ -34,22 +40,7 @@ function LoginPage({ onLogin }) {
     //   username: '',
     //   password: '',
     // })
-  
-  
-    function handleSubmit(e) {
-      e.preventDefault();
-      fetch("/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ login }),
-      }).then((r) => {
-        if (r.ok) {
-          r.json().then((user) => onLogin(user));
-        }
-      });
-    }
+
   
     // const handleChange = (event) => {
     //   const name = event.target.name;

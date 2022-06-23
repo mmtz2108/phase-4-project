@@ -1,13 +1,13 @@
 import React from "react";
-import styled from "styled-components";
+//import styled from "styled-components";
 
 
-function NavBar() {
+function NavBar({user, setUser}) {
 
 
     return (
         <div>
-            Hello u sexy cunt jacoby 
+           <button onClick={() => setUser(null)}>Logout </button>
         </div>
     //   <Container>
     //     <Wrapper>
