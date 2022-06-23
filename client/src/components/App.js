@@ -5,6 +5,22 @@ import MainFeed from './pages/MainFeed';
 import ErrorPage from './pages/ErrorPage';
 
 const App = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+  if (user) {
+    return <h2>Welcome, {user.username}!</h2>;
+  } else {
+    return <Login onLogin={setUser} />;
+  }
+}
   //const [page, setPage] = useState("/")
 
   //function handleDelete(id){

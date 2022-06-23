@@ -2,45 +2,70 @@ import React, { useState }from "react";
 import styled, {css} from "styled-components";
 import { Link } from "react-router-dom";
 
-const LoginPage = () => {
-
-
-    const [login, setLogin] = useState({
-      username: '',
-      password: '',
-    })
+function LoginPage({ onLogin }) {
+    const [username, setUsername] = useState("");
   
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      console.log(login)
-      setLogin(login)
+    function handleSubmit(e) {
+      e.preventDefault();
+      fetch("/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username }),
+      })
+        .then((r) => r.json())
+        .then((user) => onLogin(user));
     }
   
-    const handleChange = (event) => {
-      const name = event.target.name;
-      const value = event.target.value;
-  
-      setLogin({
-        ...login,
-        [name]: value
-      })
-    } 
-  return (
-      <div>
-
-         <h1>SIGN IN</h1>
-         <form onSubmit={handleSubmit}>
-            <input type='text' name='username' onChange={handleChange} value={login.username} placeholder="username" />
-             <input type='text' name='password' onChange={handleChange} value={login.password} placeholder="password" />
-           <button>LOGIN</button>
-             {/* <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-           <Link>CREATE A NEW ACCOUNT</Link> */}
-           </form>
-
-        </div>
+    return (
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <button type="submit">Login</button>
+      </form>
     );
-   };
+  }
+
+    // const [login, setLogin] = useState({
+    //   username: '',
+    //   password: '',
+    // })
+  
+  
+    // const handleSubmit = (event) => {
+    //   event.preventDefault();
+    //   console.log(login)
+    //   setLogin(login)
+    // }
+  
+    // const handleChange = (event) => {
+    //   const name = event.target.name;
+    //   const value = event.target.value;
+  
+    //   setLogin({
+    //     ...login,
+    //     [name]: value
+    //   })
+    // } 
+  // return (
+  //     <div>
+
+  //        <h1>SIGN IN</h1>
+  //        <form onSubmit={handleSubmit}>
+  //           <input type='text' name='username' onChange={handleChange} value={login.username} placeholder="username" />
+  //            <input type='text' name='password' onChange={handleChange} value={login.password} placeholder="password" />
+  //          <button>LOGIN</button>
+  //            {/* <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
+  //          <Link>CREATE A NEW ACCOUNT</Link> */}
+  //          </form>
+
+  //       </div>
+  //   );
+  //  };
 
 
 
