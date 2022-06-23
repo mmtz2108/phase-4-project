@@ -36,11 +36,20 @@ function LoginPage({ onLogin }) {
     // })
   
   
-    // const handleSubmit = (event) => {
-    //   event.preventDefault();
-    //   console.log(login)
-    //   setLogin(login)
-    // }
+    function handleSubmit(e) {
+      e.preventDefault();
+      fetch("/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ login }),
+      }).then((r) => {
+        if (r.ok) {
+          r.json().then((user) => onLogin(user));
+        }
+      });
+    }
   
     // const handleChange = (event) => {
     //   const name = event.target.name;
