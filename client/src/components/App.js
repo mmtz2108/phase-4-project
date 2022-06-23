@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage'
 import MainFeed from './pages/MainFeed';
 import ErrorPage from './pages/ErrorPage';
 import NavBar from './NavBar';
+import Posts from './post/Posts';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -28,6 +29,7 @@ const App = () => {
     <div>
       <NavBar user={user} setUser={setUser}/>
       {user? <h2>Welcome</h2>: <LoginPage setUser={setUser}/>}
+      <Posts/>
       {/* <Router>
         <Routes>
           
