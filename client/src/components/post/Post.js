@@ -6,7 +6,7 @@ function Post({post}) {
 const {id, image, description, author} = post
 
   return (
-    <div>
+    <div className="post-card">
         <img src={image}/>
         <p>{description}</p>
         <p>{author ? author.name : null}</p>

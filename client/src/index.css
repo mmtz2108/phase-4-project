@@ -35,3 +35,15 @@ img {
   cursor: pointer;
   margin-right: 50px;
 }
+
+.post-card{
+  background-color: rgb(215, 225, 234);
+  display: block;
+}
+
+.post-desc{
+display: block;
+margin-left: auto;
+margin-right: auto;
+
+}
