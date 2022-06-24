@@ -41,31 +41,29 @@ const navigate = useNavigate()
 
 
 
-  //const [page, setPage] = useState("/")
-
-  //function handleDelete(id){
-    // const filteredAdventures = adventures.filter(adventure => adventure.id !== id)
-  // setAdventures(filteredAdventures)
-  //}
-
-
   return (
     <div>
-    {/* <Router> */}
+
         <NavBar user={!user} setUser={setUser}/>
-{/* if user exists  */}
+
+          {/* <Link to="/create_posts"> Create A Post! </Link> */}
         {user && <nav className="navbar2">
-          <Link to="/CreatePosts"> Create A Post! </Link>
-          <button className="navbar-button" onClick={handleLogOut}>Logout</button>
+          {!user ? 
+            <button><Link to="/"> Login here! </Link>Login</button>
+          :
+            <button className="navbar-button" onClick={handleLogOut}>Logout</button>
+          }
+        
         </nav>
       }
       <Routes>
+          <Route path="/create_posts" element={<CreatePost/>} />
           <Route exact path="/" element={<LoginPage setUser={setUser}/>} />
           <Route path="/MainFeed" element={<MainFeed  user={user}/>} />
           <Route path="*" element={<ErrorPage/>} />
 
        </Routes>
-    {/* </Router> */}
+
     </div>
   )
     };

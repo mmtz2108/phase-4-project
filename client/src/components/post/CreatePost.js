@@ -1,18 +1,13 @@
 import React from 'react'
 import {useState} from 'react'
-// import Axios from 'axios'
-// import {Image} from 'cloudinary-react'
+
+
 
 function CreatePost({fetchPosts, user}) {
   
 
 
-//   function handleClick(){
-//     fetch(`http://localhost:8000/adventures/${adventure.id}`, {"method": "delete"});
-//     onRemoveAdventure(adventure.id)
-// }
-
-  const [description, setDescription] = useState("") // change this , possible roll back *JUST A STRING U KING :-)*
+  const [description, setDescription] = useState("") 
   const [imageSelect, setImageSelect] = useState("")
 
 function handleSubmit(e) {
@@ -36,20 +31,6 @@ function handleSubmit(e) {
     setImageSelect("")
 }
 
-// function handleDelete(){
-//   fetch("/posts")
-// }
-
-// const uploadImage = () => {
-//   const formData = new FormData()
-//   formData.append("file", imageSelect)
-//   formData.append("upload_preset", "p4pp4p")
-
-//   Axios.post("https://api.cloudinary.com/v1_1/jacobmccannstudent/image/upload", formData).then((response) => {
-//     console.log(response)
-//   })
-// };
-
 
   return (
 
@@ -59,9 +40,9 @@ function handleSubmit(e) {
           Name:
           <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
           <input type="text" value={imageSelect} onChange={(e) => {setImageSelect(e.target.value)}} />
-            {/* <button onClick={uploadImage}> */}
+       
               Post an image here
-            {/* </button> */}
+
 
         </label>
         <input type="submit" value="Submit" />

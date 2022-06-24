@@ -6,10 +6,12 @@ import Post from './Post'
 function MainFeed({ user }) {
 
   const [initialData, setInitialData] = useState([])
+  const [showPostForm, setShowPostForm] = useState(false)
+
   const {id} = useParams
 
   console.log(id)
-  // console.log({hello: initialData})
+
 
 useEffect(() => {
   fetchPosts()
@@ -21,7 +23,7 @@ useEffect(() => {
     .then(resp => resp.json())
     .then(data => {
       if(data.error){
-        // console.log(data.error)
+  
       }
       else {
       setInitialData(data)}
@@ -35,7 +37,7 @@ useEffect(() => {
 
 
 
-  // console.log(initialData)
+
 
   let postList = []
   if(initialData) {
@@ -51,14 +53,14 @@ if(!user){
 }
 
 
-// console.log(postList)
-
-    // render all posts here
-    // when YOUR post renders only YOU can delete it
   return (
     <div>
+    {showPostForm ? 
     <CreatePost id={id} fetchPosts={fetchPosts}  user={user}/>
+    : null
+    } 
 
+    <button onClick={() => setShowPostForm(!showPostForm)}>Create a post here!</button>
     {postList}
 
     </div>

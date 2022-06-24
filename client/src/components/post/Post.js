@@ -4,7 +4,7 @@ import Comment from './comments/Comment'
 
 
 function Post({post, user, fetchPosts}) {
-    // remember to add author.name
+
 const {id, image, description, author, likes} = post
 
 function handleDelete(){
@@ -23,10 +23,6 @@ function handleLike(){
   .then(()=> fetchPosts())
 }
 
-// if(!user){
-//   return <>
-//   </>
-// }
 
   return (
     <div className="post-card">
