@@ -6,7 +6,6 @@ import NavBar from './NavBar';
 import MainFeed from './post/MainFeed';
 import CreatePost from './post/CreatePost';
 
-// import { Link } from 'react-router-dom';
 
 
 const App = () => {
@@ -19,12 +18,6 @@ const App = () => {
       }
     });
   }, []);
-
-  // let history = useNavigate()
-  // if(!user) {
-  //   history("/")
-  // }
-
 
 
 const navigate = useNavigate()
@@ -45,8 +38,7 @@ const navigate = useNavigate()
     <div>
 
         <NavBar user={!user} setUser={setUser}/>
-
-          {/* <Link to="/create_posts"> Create A Post! </Link> */}
+        
         {user && <nav className="navbar2">
           {!user ? 
             <button><Link to="/"> Login here! </Link>Login</button>
