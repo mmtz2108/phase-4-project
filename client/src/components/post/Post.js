@@ -1,4 +1,5 @@
 import React from 'react'
+import Comment from './comments/Comment'
 
 
 function Post({post}) {
@@ -10,6 +11,7 @@ const {id, image, description, author} = post
         <img src={image}/>
         <p>{description}</p>
         <p>{author ? author.name : null}</p>
+        <Comment />
     </div>
   )
 }
