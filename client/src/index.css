@@ -18,3 +18,20 @@ img {
   margin-right: auto;
   width: 30%;
 }
+
+.navbar {
+  height: 40px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(122, 190, 164);
+}
+
+.navbar-button {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+  margin-right: 50px;
+}

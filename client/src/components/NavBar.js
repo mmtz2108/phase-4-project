@@ -6,12 +6,12 @@ function NavBar({user, setUser}) {
 
 
     return (
-        <div>
-           <button onClick={() => setUser(null)}>Logout </button>
+        <div className="navbar">
+           <button className="navbar-button" onClick={() => setUser(null)}>Logout </button>
         </div>
     //   <Container>
     //     <Wrapper>
-  
+
     //       <nav>
     //       <NavLink to="/">
     //       <Center>
@@ -19,14 +19,14 @@ function NavBar({user, setUser}) {
     //       </Center>
     //       </NavLink>
     //       </nav>
-  
+
     //       <Right>
     //         <nav>
     //         <NavLink to="/Register">
     //         <MenuItem>POST</MenuItem>
     //         </NavLink>
     //         </nav>
-  
+
     //         <nav>
     //         <NavLink to="/Login">
     //         <MenuItem>SIGN OUT</MenuItem>
@@ -46,7 +46,7 @@ function NavBar({user, setUser}) {
     //   </Container>
     )
   };
-  
+
   export default NavBar;
 
 
