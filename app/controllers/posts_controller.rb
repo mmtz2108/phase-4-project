@@ -35,7 +35,7 @@ class PostsController < ApplicationController
     private 
 
     def post_params 
-        params.permit(:image, :description, :poster_id) # come back to this and see 
+        params.permit(:image, :description, :poster_id, :likes) # come back to this and see 
     end
 
 

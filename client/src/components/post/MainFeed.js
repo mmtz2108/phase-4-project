@@ -1,11 +1,15 @@
 import React, {useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom'
 import CreatePost from './CreatePost'
 import Post from './Post'
 
 function MainFeed({ user }) {
   
   const [initialData, setInitialData] = useState([])
-  console.log({hello: initialData})
+  const {id} = useParams
+
+  console.log(id)
+  // console.log({hello: initialData})
 
 useEffect(() => {
   fetchPosts()
@@ -17,7 +21,7 @@ useEffect(() => {
     .then(resp => resp.json())
     .then(data => {
       if(data.error){
-        console.log(data.error)
+        // console.log(data.error)
       }
       else {
       setInitialData(data)}
@@ -30,21 +34,24 @@ useEffect(() => {
   }
 
 
-  console.log(initialData)
+  // console.log(initialData)
 
   let postList = []
   if(initialData) {
    postList = initialData.map(post => {
-    return <Post post={post} key={post.id}/>
+    return <Post fetchPosts={fetchPosts} user={user} post={post} key={post.id}/>
    
   })
 } 
+
+// console.log(postList)
 
     // render all posts here
     // when YOUR post renders only YOU can delete it
   return (
     <div>
-    <CreatePost fetchPosts={fetchPosts}  user={user}/>
+    <CreatePost id={id} fetchPosts={fetchPosts}  user={user}/>
+
     {postList}
 
     </div>

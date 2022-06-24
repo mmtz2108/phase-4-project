@@ -7,6 +7,11 @@ function CreatePost({fetchPosts, user}) {
   
 
 
+//   function handleClick(){
+//     fetch(`http://localhost:8000/adventures/${adventure.id}`, {"method": "delete"});
+//     onRemoveAdventure(adventure.id)
+// }
+
   const [description, setDescription] = useState("") // change this , possible roll back *JUST A STRING U KING :-)*
   const [imageSelect, setImageSelect] = useState("")
 
@@ -15,7 +20,8 @@ function handleSubmit(e) {
     const obj = {
     description: description,
     image: imageSelect,
-    poster_id: user.id
+    poster_id: user.id,
+    likes: 0
   }
     console.log(obj)
     fetch("/posts", {
@@ -30,6 +36,9 @@ function handleSubmit(e) {
     setImageSelect("")
 }
 
+// function handleDelete(){
+//   fetch("/posts")
+// }
 
 // const uploadImage = () => {
 //   const formData = new FormData()

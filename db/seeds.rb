@@ -21,7 +21,8 @@ images = ['https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sunset-q
 10.times do
     post = Post.create(poster_id: User.all.sample.id,
       image: images.sample,
-      description: Faker::Name.first_name
+      description: Faker::Name.first_name,
+      likes: 0
     )
 
     rand(0..7).times do
