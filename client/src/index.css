@@ -46,5 +46,8 @@ img {
 display: block;
 margin-left: auto;
 margin-right: auto;
+}
 
+.navbar2{
+  background-color: rgb(122, 190, 164)
 }

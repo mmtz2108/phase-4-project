@@ -1,4 +1,4 @@
-import jsonServerReset from 'json-server-reset/src'
+// import jsonServerReset from 'json-server-reset/src'
 import React from 'react'
 import Comment from './comments/Comment'
 
@@ -14,7 +14,7 @@ function handleDelete(){
 
 function handleLike(){
   fetch(`/posts/${id}`, {
-    method: "PATCH", 
+    method: "PATCH",
     headers: {
       "content-type": "application/json"
     },

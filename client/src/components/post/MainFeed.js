@@ -13,7 +13,7 @@ function MainFeed({ user }) {
 
 useEffect(() => {
   fetchPosts()
-    
+
   }, [])
 
   function fetchPosts(){
@@ -41,9 +41,9 @@ useEffect(() => {
   if(initialData) {
    postList = initialData.map(post => {
     return <Post fetchPosts={fetchPosts} user={user} post={post} key={post.id}/>
-   
+
   })
-} 
+}
 
 
 if(!user){

@@ -26,7 +26,7 @@ const App = () => {
   // }
 
 
-  
+
 const navigate = useNavigate()
 
   function handleLogOut(){
@@ -54,7 +54,7 @@ const navigate = useNavigate()
     {/* <Router> */}
         <NavBar user={!user} setUser={setUser}/>
 {/* if user exists  */}
-        {user && <nav>
+        {user && <nav className="navbar2">
           <Link to="/CreatePosts"> Create A Post! </Link>
           <button className="navbar-button" onClick={handleLogOut}>Logout</button>
         </nav>
@@ -63,7 +63,7 @@ const navigate = useNavigate()
           <Route exact path="/" element={<LoginPage setUser={setUser}/>} />
           <Route path="/MainFeed" element={<MainFeed  user={user}/>} />
           <Route path="*" element={<ErrorPage/>} />
-       
+
        </Routes>
     {/* </Router> */}
     </div>
