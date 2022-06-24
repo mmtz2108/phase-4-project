@@ -9,7 +9,7 @@ const {id, image, description, author} = post
     <div>
         <img src={image}/>
         <p>{description}</p>
-        <p>{author.name}</p>
+        <p>{author ? author.name : null}</p>
     </div>
   )
 }

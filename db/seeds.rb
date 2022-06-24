@@ -12,8 +12,8 @@
 Post.destroy_all
 Comment.destroy_all
 puts "Destroying Data"
-#ActiveRecord::Base.connection.reset_pk_sequence!(:posts)
-#ActiveRecord::Base.connection.reset_pk_sequence!(:comments)
+# ActiveRecord::Base.connection.reset_pk_sequence!(:posts)
+# ActiveRecord::Base.connection.reset_pk_sequence!(:comments)
 puts "Resetting Data"
 
 images = ['https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sunset-quotes-21-1586531574.jpg', 'https://cdn.britannica.com/39/155239-050-674BBCE2/Image-Andromeda-Galaxy-NASA-Wide-field-Infrared-Survey.jpg', "https://i.ytimg.com/vi/JHJFTBQdPAA/maxresdefault.jpg", "https://i.ytimg.com/vi/cs2QmUKivl8/maxresdefault.jpg", "https://i.ytimg.com/vi/c4vFxKX3nOg/maxresdefault.jpg", "https://i.ytimg.com/vi/iXJNyDorfmM/maxresdefault.jpg", "https://i.ytimg.com/vi/agBFwIO_Be8/maxresdefault.jpg", "https://i.ytimg.com/vi/FtEKJOGyeTE/maxresdefault.jpg", "https://i.ytimg.com/vi/BUyrhLRzAwU/maxresdefault.jpg", "https://i.ytimg.com/vi/35ydsnC_ncI/maxresdefault.jpg", "https://i.ytimg.com/vi/KcJdUC3EmKA/maxresdefault.jpg"]

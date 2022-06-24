@@ -1,10 +1,11 @@
 import React, { useState, useEffect} from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route, useNavigate} from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
-import MainFeed from './pages/MainFeed';
 import ErrorPage from './pages/ErrorPage';
 import NavBar from './NavBar';
-import Posts from './post/Posts';
+import MainFeed from './post/MainFeed';
+import CreatePost from './post/CreatePost';
+
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -16,6 +17,12 @@ const App = () => {
       }
     });
   }, []);
+
+  // let history = useNavigate()
+  // if(!user) {
+  //   history("/")
+  // }
+
 
 
   //const [page, setPage] = useState("/")
@@ -29,7 +36,8 @@ const App = () => {
     <div>
       <NavBar user={user} setUser={setUser}/>
       {user? <h2>Welcome</h2>: <LoginPage setUser={setUser}/>}
-      <Posts/>
+      {user && <MainFeed  user={user}/> }
+
       {/* <Router>
         <Routes>
           

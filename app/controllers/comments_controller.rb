@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :invalid
-    before_action :authorize
+    # before_action :authorize
 
     def create
         comment = Comment.create!(comment_params)

@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :invalid
 
-    rescue_from ActiveRecord::RecordNotFound, with: :not_found
+    # rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
-    before_action :authorize
+    # before_action :authorize
 
     def index 
-        posts = Post.all 
+        posts = Post.all.reverse
         render json: posts, status: 200
     end
 

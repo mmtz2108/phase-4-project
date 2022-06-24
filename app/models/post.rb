@@ -7,13 +7,17 @@ class Post < ApplicationRecord
 
 
     # one to many, covers belongs_to user
-    def author
-    User.find(self.poster_id)
-    
+def author
+    if(self.poster_id)
+        User.find(self.poster_id)
+    else
+        nil
     end
+end
 
-    def commenters 
+
+def commenters 
     self.users
-    end
+end
 
 end
