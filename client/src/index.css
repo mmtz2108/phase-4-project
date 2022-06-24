@@ -39,6 +39,7 @@ img {
 .post-card{
   background-color: rgb(215, 225, 234);
   display: block;
+  align-items: center;
 }
 
 .post-desc{

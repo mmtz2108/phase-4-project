@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
     rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
-    # before_action :authorize
+    before_action :authorize
 
     def index 
         users = User.all 
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
     def show
         user = User.find(session[:user_id])
-        render json: user, status: 200
+        render json: user
     end
 
     private 

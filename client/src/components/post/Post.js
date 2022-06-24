@@ -23,6 +23,10 @@ function handleLike(){
   .then(()=> fetchPosts())
 }
 
+// if(!user){
+//   return <>
+//   </>
+// }
 
   return (
     <div className="post-card">

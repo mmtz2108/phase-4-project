@@ -4,7 +4,7 @@ import CreatePost from './CreatePost'
 import Post from './Post'
 
 function MainFeed({ user }) {
-  
+
   const [initialData, setInitialData] = useState([])
   const {id} = useParams
 
@@ -34,6 +34,7 @@ useEffect(() => {
   }
 
 
+
   // console.log(initialData)
 
   let postList = []
@@ -43,6 +44,12 @@ useEffect(() => {
    
   })
 } 
+
+
+if(!user){
+  return <></>
+}
+
 
 // console.log(postList)
 

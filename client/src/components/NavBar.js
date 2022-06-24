@@ -1,49 +1,22 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 //import styled from "styled-components";
 
 
 function NavBar({user, setUser}) {
 
+    function handleLogOut(){
+        setUser(null)
+        navigate("/")
+    }
+
+const navigate = useNavigate()
 
     return (
         <div className="navbar">
-           <button className="navbar-button" onClick={() => setUser(null)}>Logout </button>
+            <h1>Welcome to Flat o Gram</h1>
         </div>
-    //   <Container>
-    //     <Wrapper>
 
-    //       <nav>
-    //       <NavLink to="/">
-    //       <Center>
-    //         <Logo>ReactCo</Logo>
-    //       </Center>
-    //       </NavLink>
-    //       </nav>
-
-    //       <Right>
-    //         <nav>
-    //         <NavLink to="/Register">
-    //         <MenuItem>POST</MenuItem>
-    //         </NavLink>
-    //         </nav>
-
-    //         <nav>
-    //         <NavLink to="/Login">
-    //         <MenuItem>SIGN OUT</MenuItem>
-    //         </NavLink>
-    //         </nav>
-    //         <nav>
-    //         <NavLink to="/Cart">
-    //         <MenuItem>
-    //           <Badge color="primary">
-    //             <ShoppingCartOutlined />
-    //           </Badge>
-    //         </MenuItem>
-    //         </NavLink>
-    //         </nav>
-    //       </Right>
-    //     </Wrapper>
-    //   </Container>
     )
   };
 
