@@ -10,7 +10,7 @@ function MainFeed({ user }) {
 
   const {id} = useParams
 
-  console.log(id)
+  console.log(user)
 
 
 useEffect(() => {

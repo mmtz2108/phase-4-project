@@ -1,5 +1,7 @@
+
 #title {
   text-align: center;
+  align-items: center;
 }
 
 body {
@@ -54,4 +56,12 @@ margin-right: auto;
 
 .navbar2{
   background-color: rgb(122, 190, 164)
+}
+
+#deleteButton{
+  display: block;
+  text-align: center;
+  align-items: center;
+  /* position: absolute; */
+  
 }

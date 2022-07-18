@@ -16,6 +16,7 @@ puts "Destroying Data"
 # ActiveRecord::Base.connection.reset_pk_sequence!(:comments)
 
 user3 = User.create(username: "WaqasA", password: "password")
+user4 = User.create(username: "testacc", password: "password")
 puts "Resetting Data"
 
 

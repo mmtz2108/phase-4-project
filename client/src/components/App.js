@@ -5,6 +5,7 @@ import ErrorPage from './pages/ErrorPage';
 import NavBar from './NavBar';
 import MainFeed from './post/MainFeed';
 import CreatePost from './post/CreatePost';
+import Signup from './pages/Signup';
 
 
 
@@ -50,6 +51,7 @@ const navigate = useNavigate()
       }
       <Routes>
           <Route path="/create_posts" element={<CreatePost/>} />
+          <Route path="/signup" element={<Signup />} />
           <Route exact path="/" element={<LoginPage setUser={setUser}/>} />
           <Route path="/MainFeed" element={<MainFeed  user={user}/>} />
           <Route path="*" element={<ErrorPage/>} />
