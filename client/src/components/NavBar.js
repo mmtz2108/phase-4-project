@@ -10,11 +10,18 @@ function NavBar({user, setUser}) {
         navigate("/")
     }
 
+    fetch('/users')
+    .then(resp => resp.json())
+    .then(data => {
+        console.log(data)
+    })
+
+    
 const navigate = useNavigate()
 
     return (
         <div className="navbar">
-            <h1>Welcome to Flat o Gram</h1>
+            <h1 id="title">Welcome to Flatagram</h1>
         </div>
 
     )
