@@ -16,12 +16,12 @@ function NavBar({user, setUser}) {
         console.log(data)
     })
 
-    
+
 const navigate = useNavigate()
 
     return (
         <div className="navbar">
-            <h1 id="title">Welcome to Flatagram</h1>
+            {/* <h1 id="title">Welcome to Flatagram</h1> */}
         </div>
 
     )

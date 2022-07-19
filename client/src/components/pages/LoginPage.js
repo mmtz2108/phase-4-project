@@ -31,6 +31,8 @@ function LoginPage({ setUser }) {
 
 
   return (
+    <div>
+      <h1>Login here</h1>
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -44,6 +46,7 @@ function LoginPage({ setUser }) {
       />
       <button type="submit">Login</button>
     </form>
+    </div>
   );
 }
 

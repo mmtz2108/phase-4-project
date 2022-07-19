@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   # route to test your configuration
   get '/hello', to: 'application#hello_world'
+
 end

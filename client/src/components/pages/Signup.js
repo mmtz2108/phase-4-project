@@ -20,7 +20,7 @@ const Signup = () => {
         }).then(resp => resp.json())
         .then(user => {
             if(user.id){
-                navigate('/')
+                navigate('/login')
             }
         })
         
@@ -32,7 +32,7 @@ const Signup = () => {
     <form onSubmit={handleSubmit}>
     <input type="text" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} />    <br />
     <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />     <br />
-    <input type="password" placeholder="password" value={password_confirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />     <br />
+    <input type="password" placeholder="confirm password" value={password_confirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />     <br />
     <button>Signup</button>
 
     </form> 
