@@ -18,6 +18,19 @@ code {
     monospace;
 }
 
+.LandingPage {
+  text-align: center;
+}
+
+.loginPage {
+  text-align: center;
+}
+
+
+.formSubmission {
+text-align: center;
+}
+
 img {
   display: block;
   margin-left: auto;
@@ -46,6 +59,22 @@ img {
   background-color: rgb(215, 225, 234);
   display: block;
   align-items: center;
+}
+.buttons {
+text-align: center;
+}
+
+.content {
+  text-align: center;
+}
+
+.delete {
+  text-align: center;
+}
+
+#deleteButton {
+ align-items: center;
+ text-align: center;
 }
 
 .post-desc{

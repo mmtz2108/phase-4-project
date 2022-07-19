@@ -27,12 +27,19 @@ function handleLike(){
   return (
     <div className="post-card">
         <img src={image}/>
-        {author.id === user.id ? <button id="deleteButton" onClick={handleDelete}>Delete Button</button> : null}
-        {<button id="likeButton" onClick={handleLike}>Like Button</button>}
-        <p>{likes}</p>
-        <p>{description}</p>
-        <p>{author ? author.name : null}</p>
-        <Comment />
+        <div className="buttons">
+          <div className='delete'>
+            {author.id === user.id ?
+            <button id="deleteButton" onClick={handleDelete}>Delete Button</button> : null}
+            </div>
+            {<button id="likeButton" onClick={handleLike}>Like Button</button>}
+        </div>
+        <div className='content'>
+            <p>{likes}</p>
+            <p>{description}</p>
+            <p>{author ? author.name : null}</p>
+            <Comment />
+        </div>
     </div>
   )
 }

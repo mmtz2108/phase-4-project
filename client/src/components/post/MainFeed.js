@@ -55,6 +55,7 @@ if(!user){
 
   return (
     <div>
+      <h1>Flatagram</h1>
     {showPostForm ? 
     <CreatePost id={id} fetchPosts={fetchPosts}  user={user}/>
     : null

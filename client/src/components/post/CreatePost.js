@@ -35,14 +35,12 @@ function handleSubmit(e) {
   return (
 
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className='formSubmission' onSubmit={handleSubmit}>
         <label>
-          Name:
-          <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
-          <input type="text" value={imageSelect} onChange={(e) => {setImageSelect(e.target.value)}} />
-       
-              Post an image here
-
+          <input type="text" placeholder="caption here" value={description} onChange={(e) => setDescription(e.target.value)} />
+          <input type="text" placeholder="image here" value={imageSelect} onChange={(e) => {setImageSelect(e.target.value)}} />
+             
+          <br />
 
         </label>
         <input type="submit" value="Submit" />
