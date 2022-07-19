@@ -36,11 +36,13 @@ function LoginPage({ setUser }) {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
+        placeholder="username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
         type="password"
+        placeholder="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
